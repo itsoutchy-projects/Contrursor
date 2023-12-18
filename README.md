@@ -14,4 +14,5 @@ Start (menu button for XBox controllers) - start menu
 Runs seamlessly in the background, doesn't show a thing, not even a taskbar icon
 
 ## TODO
-Add setup app to automatically install it in the startup folder if chosen
+Add setup app to automatically install it in the startup folder if chosen  
+Allow holding DPad buttons

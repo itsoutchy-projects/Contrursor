@@ -69,7 +69,7 @@ namespace Contrursor
 
                 m_notifyIcon.BalloonTipText = "Click my icon to close Contrursor";
                 m_notifyIcon.BalloonTipTitle = "Contrursor";
-                m_notifyIcon.Text = "Contrursor";
+                m_notifyIcon.Text = "Contrursor - Click to close";
                 m_notifyIcon.Icon = new System.Drawing.Icon("icon.ico");
                 m_notifyIcon.Click += M_notifyIcon_Click;
                 m_notifyIcon.Visible = true;
