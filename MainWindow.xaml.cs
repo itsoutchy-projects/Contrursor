@@ -17,6 +17,7 @@ using System.Windows.Threading;
 using Hardcodet.Wpf.TaskbarNotification;
 using Hardcodet.Wpf.TaskbarNotification.Interop;
 using System.Windows.Forms;
+using MessageBox = System.Windows.MessageBox;
 
 namespace Contrursor
 {
@@ -52,21 +53,53 @@ namespace Contrursor
         static bool rightDown = false;
         static bool rightUp = true;
 
+        private NotifyIcon m_notifyIcon;
+
         //NotifyIconData iconData = new NotifyIconData();
 
         public MainWindow()
         {
             InitializeComponent();
-            //iconData.BalloonTitle = "Contrursor";
-            DispatcherTimer timer = new DispatcherTimer();
-            //NotifyIcon thisicon = new NotifyIcon();
-            //BitmapImage bitmapImage = new BitmapImage();
-            //thisicon.Icon = new System.Drawing.Icon("pack://application:,,,/icon.ico");
-            //thisicon.Text = "Contrursor";
-            //thisicon.ShowBalloonTip(0);
-            timer.Interval = new TimeSpan(10000);
-            timer.Tick += GamePadStuff;
-            timer.Start();
+            try
+            {
+                //iconData.BalloonTitle = "Contrursor";
+                DispatcherTimer timer = new DispatcherTimer();
+
+                m_notifyIcon = new NotifyIcon();
+
+                m_notifyIcon.BalloonTipText = "Click my icon to close Contrursor";
+                m_notifyIcon.BalloonTipTitle = "Contrursor";
+                m_notifyIcon.Text = "Contrursor";
+                m_notifyIcon.Icon = new System.Drawing.Icon("icon.ico");
+                m_notifyIcon.Click += M_notifyIcon_Click;
+                m_notifyIcon.Visible = true;
+                m_notifyIcon.ShowBalloonTip(2000);
+
+                Closing += MainWindow_Closing;
+
+                timer.Interval = new TimeSpan(10000);
+                timer.Tick += GamePadStuff;
+                timer.Start();
+            } catch (Exception ex)
+            {
+                CrashHandler(ex);
+            }
+        }
+
+        public void CrashHandler(Exception ex)
+        {
+            MessageBox.Show($"{ex.Message} \n\nStack trace: {ex.StackTrace}", "Fatal error");
+        }
+
+        private void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+        {
+            m_notifyIcon.Dispose();
+            m_notifyIcon = null;
+        }
+
+        private void M_notifyIcon_Click(object? sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
 
         public void GamePadStuff(object? sender, EventArgs e)
