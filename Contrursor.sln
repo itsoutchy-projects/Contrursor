@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contrursor", "Contrursor.csproj", "{77CD5C8D-9720-4F59-9CC4-161E0119E06E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77CD5C8D-9720-4F59-9CC4-161E0119E06E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77CD5C8D-9720-4F59-9CC4-161E0119E06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77CD5C8D-9720-4F59-9CC4-161E0119E06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77CD5C8D-9720-4F59-9CC4-161E0119E06E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {664362FF-BC89-486B-B6DF-7892C6E60A51}
+	EndGlobalSection
+EndGlobal
