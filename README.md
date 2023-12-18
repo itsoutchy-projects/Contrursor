@@ -2,12 +2,12 @@
 Easily control your PC with a controller.
 
 ## CONTROLS
-Left thumbstick - mouse
-Left trigger/A - left click
-Right trigger - right click
-Left shoulder - scroll down
-Right shoulder - scroll up
-DPad - arrow keys
+Left thumbstick - mouse  
+Left trigger/A - left click  
+Right trigger - right click  
+Left shoulder - scroll down  
+Right shoulder - scroll up  
+DPad - arrow keys  
 Start (menu button for XBox controllers) - start menu
 
 ## Benefits
