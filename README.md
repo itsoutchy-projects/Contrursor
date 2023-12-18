@@ -1,7 +1,7 @@
 # Contrursor
 Easily control your PC with a controller.
 
-## CONTROLS
+## Controls
 Left thumbstick - mouse  
 Left trigger/A - left click  
 Right trigger - right click  
