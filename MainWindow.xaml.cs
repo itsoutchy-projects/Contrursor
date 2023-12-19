@@ -18,6 +18,10 @@ using Hardcodet.Wpf.TaskbarNotification;
 using Hardcodet.Wpf.TaskbarNotification.Interop;
 using System.Windows.Forms;
 using MessageBox = System.Windows.MessageBox;
+using System.Diagnostics;
+using System.Security.Policy;
+using System.Windows.Interop;
+using System.Runtime.InteropServices;
 
 namespace Contrursor
 {
@@ -97,9 +101,39 @@ namespace Contrursor
             m_notifyIcon = null;
         }
 
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        public static extern IntPtr SetForegroundWindow(IntPtr hwnd);
+
         private void M_notifyIcon_Click(object? sender, EventArgs e)
         {
-            Environment.Exit(0);
+            //if (Simulator.pressedMouseButton == Simulator.MouseButton.Left)
+            //{
+                Environment.Exit(0);
+            //} else if (Simulator.pressedMouseButton == Simulator.MouseButton.Right)
+            //{
+            //    ContextMenu menu = new ContextMenu();
+            //    MenuItem item = new MenuItem();
+            //    item.Header = "GitHub";
+            //    item.Click += GithubItemClick;
+            //    menu.Items.Add(item);
+            //    menu.Visibility = Visibility.Visible;
+            //    menu.IsOpen = true;
+
+            //    if (PresentationSource.FromVisual(menu) is HwndSource hwndSource)
+            //    {
+            //        _ = SetForegroundWindow(hwndSource.Handle);
+            //    }
+            //}
+        }
+
+        private void GithubItemClick(object sender, RoutedEventArgs e)
+        {
+            var psi = new ProcessStartInfo
+            {
+                FileName = "https://github.com/itsoutchy-projects/Contrursor",
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
 
         public void GamePadStuff(object? sender, EventArgs e)

@@ -13,6 +13,9 @@ Start (menu button for XBox controllers) - start menu
 ## Benefits
 Runs seamlessly in the background, doesn't show a thing, not even a taskbar icon
 
+## How to install?
+Download the setup here and follow the instructions
+https://fastupload.io/i763UXofHSrIAz7/file
+
 ## TODO
-Add setup app to automatically install it in the startup folder if chosen  
 Allow holding DPad buttons

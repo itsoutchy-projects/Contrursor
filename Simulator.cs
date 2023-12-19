@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Contrursor
 {
@@ -53,6 +54,31 @@ namespace Contrursor
             XBUTTON2 = 0x00000002
         }
 
+        public enum MouseButton
+        {
+            Left,
+            Middle,
+            Right,
+            None
+        }
+
+        public static MouseButton pressedMouseButton
+        {
+            get
+            {
+                if (Mouse.LeftButton == MouseButtonState.Pressed)
+                {
+                    return MouseButton.Left;
+                } else if (Mouse.RightButton == MouseButtonState.Pressed)
+                {
+                    return MouseButton.Right;
+                } else if (Mouse.MiddleButton == MouseButtonState.Pressed)
+                {
+                    return MouseButton.Middle;
+                }
+                return MouseButton.None;
+            }
+        }
 
         public static int MouseX
         {
